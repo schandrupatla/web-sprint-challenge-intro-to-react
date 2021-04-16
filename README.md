@@ -32,11 +32,38 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+- React is a JavaScript library for building user interfaces. React is used to build single page applications. React allows us to create reusable UI components.
+- React is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It's used for handling the view layer for web and mobile apps. 
+- solves problems of better handling of dynamic data for faster response times. It lets you design simple views for every application state. React. js responds to data changes instantly and renders the right components for a smooth user experience.
+- A React SPA(Single page application) works inside a browser and does not require page reloading from the user's side. The famous examples of SPAs are Gmail, Google Maps, Facebook, or Github.-
+
 1. Describe component state.
+
+- The heart of every React component is its “state”, an object that determines how that component renders & behaves. In other words, “state” is what allows you to create components that are dynamic and interactive.
+- State is a JavaScript object that stores component's dynamic data and it enables a component to keep track of changes between renders. Because state is dynamic, it is reserved only for interactivity .
 
 1. Describe props.
 
+- Props” is a special keyword in React, which stands for properties and is being used for passing data from one component to another. Furthermore, props data is read-only, which means that data coming from the parent should not be changed by child components and  it goes in one direction always from parent to child
+- Props are the React Function Component's parameters. Whereas the component can stay generic, we decide from the outside what it should render (or how it should behave). When rendering a component (e.g. Headline in App component), you can pass props as HTML attributes to the component.
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+- A side effect is an application state change that happens outside of the called function—to be precise, any state change other than its return value.
+- Side effects are basically anything that affects something outside of the scope of the current function that’s being executed. this includes:
+        - API requests to our backend service
+        - Calls to our authentication service
+        - Error tracking calls to Sentry
+- There are two common kinds of side effects in React components: those that don’t require cleanup, and those that cleanup.
+
+- We can pass props as initialState to useState.but, useState won’t initialize on props change. when we trigger an even or some way change or update the props , the useState don’t reset the state.
+- so to set or change the state whenever props change, we will set the state inside useEffect.
+- In this way, whenever props get changed, it will set as the state inside useEffect. useEffect is primarily to handle side effects and this is one of those example for using it.
+    example:
+      useEffect(() => {
+        setProfileState(props);
+      }, [props]);
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
