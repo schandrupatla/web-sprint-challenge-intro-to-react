@@ -2,9 +2,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import {ThemeProvider} from 'styled-components'
 import App from "./App";
-
 import { worker } from "./mocks/browser";
+import MyStyles from './components/MyStyles'
 worker.start();
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+    <ThemeProvider theme={MyStyles}>
+        <App />
+    </ThemeProvider> ,
+     document.getElementById("root"));
